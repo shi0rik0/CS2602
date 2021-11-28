@@ -1,5 +1,5 @@
-#ifndef CLION_PROJ_BINARYTREE_H
-#define CLION_PROJ_BINARYTREE_H
+#ifndef CLION_PROJ_BINARYTREENODE_H
+#define CLION_PROJ_BINARYTREENODE_H
 
 #include "Exceptions.h"
 #include "queue/SeqQueue.h"
@@ -31,9 +31,19 @@ public:
         return data;
     }
 
-private:
     BinaryTreeNode<T>* left = nullptr;
     BinaryTreeNode<T>* right = nullptr;
+    T data;
+};
+
+template <typename T>
+class AVLTreeNode {
+public:
+    using ElemType = T;
+
+    AVLTreeNode<T>* left = nullptr;
+    AVLTreeNode<T>* right = nullptr;
+    int height = 1;
     T data;
 };
 
@@ -157,4 +167,4 @@ BinaryTreeNode<T>* create_tree(const T& null_flag) {
     return root;
 }
 
-#endif //CLION_PROJ_BINARYTREE_H
+#endif //CLION_PROJ_BINARYTREENODE_H
