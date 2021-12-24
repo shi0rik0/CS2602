@@ -6,8 +6,6 @@
 #include <string>
 #include <sstream>
 
-// todo: 实现拷贝构造函数和赋值重载（好像有bug？）
-
 template <typename T>
 class SeqList final {
 public:
@@ -152,7 +150,7 @@ public:
         auto& r = *const_cast<SeqList*>(this);
         return r.find(func, start);
     }
-    std::string get_test_string() const {
+    std::string to_string() const {
         std::ostringstream oss;
         auto sep = "{";
         for (int i = 0; i < len; ++i) {

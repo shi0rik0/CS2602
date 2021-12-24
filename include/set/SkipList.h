@@ -5,4 +5,6 @@
 #ifndef CLION_PROJ_SKIPLIST_H
 #define CLION_PROJ_SKIPLIST_H
 
+// todo
+
 #endif //CLION_PROJ_SKIPLIST_H

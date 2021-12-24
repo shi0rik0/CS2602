@@ -5,4 +5,6 @@
 #ifndef CLION_PROJ_RBTREE_H
 #define CLION_PROJ_RBTREE_H
 
+// 暂时不想写了
+
 #endif //CLION_PROJ_RBTREE_H

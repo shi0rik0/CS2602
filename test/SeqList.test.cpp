@@ -8,7 +8,7 @@ TEST(SeqListTest, SimpleTest) {
     for (int i = 0; i < 3; ++i) {
         list.push(i);
     }
-    EXPECT_EQ(list.get_test_string(), "{0, 1, 2}");
+    EXPECT_EQ(list.to_string(), "{0, 1, 2}");
     EXPECT_EQ(list.end_ref(), 2);
     list.pop();
     EXPECT_EQ(list.end_ref(), 1);

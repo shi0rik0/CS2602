@@ -1,5 +1,3 @@
-set(SRC_FILE acm12111.cpp)
-
-include_directories(../include)
+set(SRC_FILE acm1212.cpp)
 
 add_executable(online-judge ${SRC_FILE})
