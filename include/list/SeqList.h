@@ -8,7 +8,34 @@
 
 template <typename T>
 class SeqList final {
+private:
+    class Iterator {
+    public:
+        explicit Iterator(T* p_) : p(p_) {}
+        Iterator& operator++() {
+            ++p;
+            return *this;
+        }
+        T& operator*() {
+            return *p;
+        }
+        const T& operator*() const {
+            return *p;
+        }
+        T* operator->() {
+            return p;
+        }
+        const T* operator->() const {
+            return p;
+        }
+        bool operator!=(Iterator rhs) const {
+            return p != rhs.p;
+        }
+    private:
+        T* p;
+    };
 public:
+    using iterator = Iterator;
     SeqList() : max_len(64) {
         data = alloc.allocate(max_len);
     }
@@ -160,7 +187,15 @@ public:
         oss << "}";
         return oss.str();
     }
+    Iterator begin() {
+        return Iterator(data);
+    }
+    Iterator end() {
+        return Iterator(data + len);
+    }
 private:
+
+
     T* data = nullptr;
     int len = 0;
     int max_len = 0;

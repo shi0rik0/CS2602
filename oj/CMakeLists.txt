@@ -1,3 +1,3 @@
-set(SRC_FILE acm1212.cpp)
+set(SRC_FILE acm1231.cpp)
 
 add_executable(online-judge ${SRC_FILE})

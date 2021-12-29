@@ -15,7 +15,7 @@ namespace alloc {
     void deallocate(T *p, int size) {
         std::allocator<T> alloc;
         using traits_t = std::allocator_traits<decltype(alloc)>;
-        traits_t::deallocate(alloc, p, 1);
+        traits_t::deallocate(alloc, p, size);
     }
 
     template<typename T, typename... Args>

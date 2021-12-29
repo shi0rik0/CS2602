@@ -40,6 +40,8 @@ struct NullEdge {
 
 };
 
+int vertex[120];
+
 template <typename Edge>
 class DenseGraph final {
 public:
@@ -99,6 +101,7 @@ public:
     int dfs(int start) {
         for (int i = 0; i < size; ++i) {
             visited[i] = false;
+            vertex[i] = 999999;
         }
         dfs_(start, 0);
         int c = 0;
@@ -114,9 +117,10 @@ private:
         if (layer == 7) {
             return;
         }
+        vertex[v] = layer;
         visited[v] = true;
         for (int i = 0; i < size; ++i) {
-            if (conn[v][i]) {
+            if (conn[v][i] && vertex[i] > vertex[v] + 1) {
                 dfs_(i, layer + 1);
             }
         }
